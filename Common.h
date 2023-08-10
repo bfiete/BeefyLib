@@ -2,6 +2,7 @@
 
 #include "CommonBase.h"
 #include "String.h"
+#include <stdarg.h>
 
 NS_BF_BEGIN
 

@@ -74,7 +74,7 @@ public:
 
 static bool operator!=(const Val128& l, int rLow)
 {
-	return (l.mHigh != 0) || (l.mLow != rLow);
+	return (l.mHigh != 0) || (l.mLow != (uint64)rLow);
 }
 
 static bool operator==(const Val128& l, const Val128& r)

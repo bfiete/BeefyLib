@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <functional>
+#include <cstdint>
 
 typedef uint64_t uint64;
 typedef uint32_t uint32;
@@ -151,8 +152,8 @@ typedef StringT<16> String;
 #define V_32_64(v32, v64) v32
 #endif
 
-#define BF_PI 3.14159265359f
-#define BF_PI_D 3.14159265359
+#define BF_PI 3.14159265358979323846f
+#define BF_PI_D 3.14159265358979323846
 
 inline float BFRound(float aVal)
 {
@@ -171,10 +172,6 @@ inline int BFClamp(int val, int min, int max)
 {
 	return (val <= min) ? min : (val >= max) ? max : val;
 }
-
-// uint32 BFTickCount();
-// void BFFatalError(const char* message, const char* file, int line);
-// void BFFatalError(const StringImpl& message, const StringImpl& file, int line);
 
 template<typename T>
 struct RemoveTypePointer

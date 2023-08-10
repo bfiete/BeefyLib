@@ -1,4 +1,6 @@
 #include "String.h"
+#include <cstring>
+#include <cwctype>
 
 USING_NS_BF;
 

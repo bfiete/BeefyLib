@@ -56,6 +56,27 @@ public:
 		return y + height;
 	}
 
+	Rect Intersection(Rect rect)
+	{
+		T x1 = Max(x, rect.x);
+		T x2 = Min(x + width, rect.x + rect.width);
+		T y1 = Max(y, rect.y);
+		T y2 = Min(y + height, rect.y + rect.height);
+		if (((x2 - x1) < 0) || ((y2 - y1) < 0))
+			return Rect();
+		else
+			return Rect(x1, y1, x2 - x1, y2 - y1);
+	}
+
+	Rect Union(Rect rect)
+	{
+		T x1 = Min(x, rect.x);
+		T x2 = Max(x + width, rect.x + rect.width);
+		T y1 = Min(y, rect.y);
+		T y2 = Max(y + height, rect.y + rect.height);
+		return Rect(x1, y1, x2 - x1, y2 - y1);
+	}
+
 	void Include(Point<T> pt)
 	{
 		T left = x;

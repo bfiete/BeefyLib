@@ -2,6 +2,7 @@
 
 #include "Common.h"
 #include <cstdarg>
+#include <assert.h>
 
 USING_NS_BF;
 
@@ -16,6 +17,8 @@ String Beefy::vformat(const char* fmt, va_list argPtr)
 	char* newFmt = NULL;
 	char tempBuff[2048];
 	char* tempBuffPtr = tempBuff;
+
+#ifdef _WIN32
 	for (int i = 0; fmt[i] != 0; i++)
 	{
 		if (fmt[i] == '%')
@@ -88,6 +91,8 @@ String Beefy::vformat(const char* fmt, va_list argPtr)
 			argIdx++;
 		}
 	}
+#endif
+
 	if (newFmt != NULL)
 	{
 		Beefy::String retVal = vformat(newFmt, argPtr);
@@ -160,4 +165,12 @@ String Beefy::StrFormat(const char* fmt ...)
 	va_end(argList);
 
 	return aResult;
+}
+
+void Beefy::BFFatalError(const char* message, const char* file, int line)
+{
+	assert(0);
+	while (true)
+	{
+	}
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <cstring>
 #include "CommonBase.h"
 #include "Array.h"
 #include "SizedArray.h"
