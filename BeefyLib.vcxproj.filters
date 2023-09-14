@@ -71,8 +71,5 @@
     <ClCompile Include="String.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BeefyLib_ALL.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

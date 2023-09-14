@@ -36,7 +36,6 @@
     <ClInclude Include="String.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BeefyLib_ALL.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="String.cpp" />

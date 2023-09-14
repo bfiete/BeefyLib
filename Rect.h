@@ -88,6 +88,14 @@ public:
 		width = BF_MAX(pt.x, right) - x;
 		height = BF_MAX(pt.y, bottom) - y;
 	}
+
+	void Inflate(T x, T y)
+	{
+		this->x -= x;
+		this->width += x + x;
+		this->y -= y;
+		this->height += y + y;
+	}
 };
 
 typedef Rect<double> RectD;
