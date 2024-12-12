@@ -3,6 +3,7 @@
 #include "Common.h"
 #include <cstdarg>
 #include <assert.h>
+#include <windows.h>
 
 USING_NS_BF;
 
@@ -165,6 +166,16 @@ String Beefy::StrFormat(const char* fmt ...)
 	va_end(argList);
 
 	return aResult;
+}
+
+void Beefy::OutputDebugStrF(const char* fmt ...)
+{
+	va_list argList;
+	va_start(argList, fmt);
+	String aResult = vformat(fmt, argList);
+	va_end(argList);
+
+	::OutputDebugStringA(aResult.c_str());
 }
 
 void Beefy::BFFatalError(const char* message, const char* file, int line)

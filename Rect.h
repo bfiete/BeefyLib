@@ -68,6 +68,18 @@ public:
 			return Rect(x1, y1, x2 - x1, y2 - y1);
 	}
 
+	bool Intersects(Rect rect)
+	{
+		T x1 = BF_MAX(x, rect.x);
+		T x2 = BF_MIN(x + width, rect.x + rect.width);
+		T y1 = BF_MAX(y, rect.y);
+		T y2 = BF_MIN(y + height, rect.y + rect.height);
+		if (((x2 - x1) <= 0) || ((y2 - y1) <= 0))
+			return false;
+		else
+			return true;
+	}
+
 	Rect Union(Rect rect)
 	{
 		T x1 = Min(x, rect.x);
